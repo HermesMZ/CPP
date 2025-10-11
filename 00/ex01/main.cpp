@@ -6,20 +6,89 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:48:22 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/09/25 17:16:35 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/11 04:26:45 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
+static void test(PhoneBook &phoneBook)
+{
+	Contact c;
+
+	c.setFirstName("Alice");
+	c.setLastName("Smith");
+	c.setNickname("Ali");
+	c.setPhoneNumber("1111111111");
+	c.setDarkestSecret("Afraid of spiders");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Bob");
+	c.setLastName("Johnson");
+	c.setNickname("Bobby");
+	c.setPhoneNumber("2222222222");
+	c.setDarkestSecret("Never learned to ride a bike");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Charlie");
+	c.setLastName("Brown");
+	c.setNickname("Chuck");
+	c.setPhoneNumber("3333333333");
+	c.setDarkestSecret("Hates Mondays");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Diana");
+	c.setLastName("Prince");
+	c.setNickname("Wonder");
+	c.setPhoneNumber("4444444444");
+	c.setDarkestSecret("Collects action figures");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Eve");
+	c.setLastName("Adams");
+	c.setNickname("Evie");
+	c.setPhoneNumber("5555555555");
+	c.setDarkestSecret("Sings in the shower loudly");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Frank");
+	c.setLastName("Miller");
+	c.setNickname("Franky");
+	c.setPhoneNumber("6666666666");
+	c.setDarkestSecret("Can\'t whistle");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Grace");
+	c.setLastName("Hopper");
+	c.setNickname("G.");
+	c.setPhoneNumber("7777777777");
+	c.setDarkestSecret("Writes comments in binary");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Hank");
+	c.setLastName("Pym");
+	c.setNickname("Pym");
+	c.setPhoneNumber("8888888888");
+	c.setDarkestSecret("Talks to plants");
+	phoneBook.addContact(c);
+
+	c.setFirstName("Ivy");
+	c.setLastName("Green");
+	c.setNickname("Ivy");
+	c.setPhoneNumber("9999999999");
+	c.setDarkestSecret("Afraid of heights");
+	phoneBook.addContact(c);
+}
+
 int main()
 {
+	PhoneBook::setVerbose(false);
+	Contact::setVerbose(false);
+	
 	PhoneBook phoneBook;
-	Contact contact;
-	
-	// le programme tourne tant qu'on ne tape pas exit
-	
+	test(phoneBook);
+
 	while (true)
 	{
 		std::string command;
@@ -28,12 +97,10 @@ int main()
 		
 		if (command == "ADD")
 		{
-			// Ajouter un contact
 			phoneBook.addContact();
 		}
 		else if (command == "SEARCH")
 		{
-			// Afficher les contacts
 			phoneBook.displayContacts();
 		}
 		else if (command == "EXIT")
