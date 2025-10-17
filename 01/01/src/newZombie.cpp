@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 17:18:41 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/17 11:32:17 by mzimeris         ###   ########.fr       */
+/*   Created: 2025/10/16 17:26:39 by mzimeris          #+#    #+#             */
+/*   Updated: 2025/10/16 17:30:29 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie* newZombie(std::string name)
 {
-	std::cout << "[DEBUG] Zombie " << this->name << " is created." << std::endl;
-}
-
-
-Zombie::~Zombie()
-{
-	std::cout << "[DEBUG] Zombie " << name << " is destroyed." << std::endl;
-}
-
-void Zombie::setName(std::string name)
-{
-	this->name = name;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-std::string Zombie::getName() const
-{
-	return this->name;
+	Zombie* z = new Zombie();
+	z->setName(name);
+	z->announce();
+    return z;
 }

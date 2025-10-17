@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:17:29 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/17 11:43:46 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/17 11:43:56 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ public:
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif // ZOMBIE_HPP
