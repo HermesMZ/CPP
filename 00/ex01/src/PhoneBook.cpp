@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:36:12 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/11 04:27:19 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:53:19 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ PhoneBook::~PhoneBook()
 		std::cout << "PhoneBook destroyed!" << std::endl;
 }
 
-// Read a non-empty line from std::cin, return false on EOF/error
 static bool readNonEmptyField(const std::string &prompt, std::string &out)
 {
 	while (true)
@@ -47,11 +46,9 @@ static bool readNonEmptyField(const std::string &prompt, std::string &out)
 		std::cout << prompt;
 		if (!std::getline(std::cin, out))
 		{
-			// EOF or error
 			std::cout << std::endl;
 			return false;
 		}
-		// Reject empty or whitespace-only input
 		if (out.find_first_not_of(" \t\r\n") != std::string::npos)
 			return true;
 		std::cout << "Field cannot be empty or only spaces. Please try again." << std::endl;
@@ -62,7 +59,6 @@ void PhoneBook::addContact()
 {
 	if (this->contactCount == 8)
 	{
-		// supprimer le premier contact (index 0) et décaler les autres
 		for (int i = 1; i < this->contactCount; i++)
 		{
 			this->contacts[i - 1] = this->contacts[i];
@@ -78,7 +74,6 @@ void PhoneBook::addContact()
 	std::string phoneNumber;
 	std::string darkestSecret;
 
-	// Read each field and require non-empty input. If EOF occurs, abort adding.
 	if (!readNonEmptyField("Enter first name: ", firstName))
 		return;
 	if (!readNonEmptyField("Enter last name: ", lastName))

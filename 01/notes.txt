@@ -1,0 +1,22 @@
+
+
+## **C++ Module 01 - Memory allocation, pointers to members, references and switch statements**
+
+### Notions abordées :
+
+**Exercise 04: Sed is for losers**
+- Manipulation de fichiers (ouverture, lecture, écriture)
+- Gestion des strings (`std::string`)
+- Remplacement de sous-chaînes (sans utiliser `std::string::replace`)
+- Gestion d'erreurs et validations d'entrées
+
+**Exercise 05: Harl 2.0**
+- **Pointeurs sur fonctions membres** (pointers to member functions) ⭐
+- Classes et méthodes privées/publiques
+- Tableaux de pointeurs sur fonctions membres
+- Appel de méthodes via pointeurs membres avec `(this->*function)()`
+- Alternative aux structures `if/else if/else` multiples
+
+---
+
+Si vous pouvez copier-coller les autres sujets, je vous ferai un tableau récapitulatif complet de tous les modules ! 😊

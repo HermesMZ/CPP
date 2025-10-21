@@ -6,11 +6,11 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:17:29 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/17 11:43:46 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:46:49 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 

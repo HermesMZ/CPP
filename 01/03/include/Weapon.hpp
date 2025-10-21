@@ -6,11 +6,11 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:42:17 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/17 15:57:38 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:46:49 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
 

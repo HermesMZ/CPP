@@ -1,0 +1,23 @@
+
+
+Rang 05 - Niveau 1 (C++)
+
+BigInt : Implémentation d'entiers de taille arbitraire
+
+Vect2 : Classe de vecteurs 2D avec opérateurs arithmétiques
+
+Polyset : SacRecherche et Ensemble (collections avec capacité de recherche)
+
+Rang 05 - Niveau 2 (C)
+
+BSQ : Trouver le plus grand carré dans une carte
+
+Life : Le Jeu de la Vie de Conway
+
+
+
+Rank 06
+
+mini_serv : Serveur de chat multi-clients
+
+mini_db : Base de données simple avec protocole réseau 

@@ -6,11 +6,11 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:43:26 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/17 16:11:47 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:46:49 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+
 #ifndef HUMANB_HPP
 #define HUMANB_HPP
 
