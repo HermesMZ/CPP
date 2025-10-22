@@ -6,19 +6,21 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:25:11 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/22 14:10:49 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:11:09 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
 	Harl harl;
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
+	if (argc != 2)
+	{
+		std::cout << "Usage: ./harlFilter <LEVEL>\n";
+		return 1;
+	}
+	harl.complain(argv[1]);
 	return 0;
 }

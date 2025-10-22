@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 17:25:11 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/22 14:10:49 by mzimeris         ###   ########.fr       */
+/*   Created: 2025/10/17 17:00:28 by mzimeris          #+#    #+#             */
+/*   Updated: 2025/10/21 14:46:49 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
 
-int main(void)
+#ifndef HARL_HPP
+#define HARL_HPP
+
+#include <iostream>
+
+class Harl
 {
-	Harl harl;
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-	return 0;
-}
+	public:
+		void complain( std::string level );
+};
+
+#endif /* HARL_HPP */

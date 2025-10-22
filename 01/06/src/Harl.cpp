@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:00:12 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/21 15:04:09 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:31:47 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void Harl::debug( void )
 {
-	std::cout << "[DEBUG]   contextual informations" << std::endl;
+	std::cout << "contextual informations" << std::endl;
 }
 
 void Harl::info( void )
 {
-	std::cout << "[INFO]    extensive informations" << std::endl;
+	std::cout << "extensive informations" << std::endl;
 }
 
 void Harl::warning( void )
 {
-	std::cout << "[WARNING] potential issue in the system" << std::endl;
+	std::cout << "potential issue in the system" << std::endl;
 }
 
 void Harl::error( void )
 {
-	std::cout << "[ERROR]   unrecoverable error has occurred" << std::endl;
+	std::cout << "unrecoverable error has occurred" << std::endl;
 }
 
 void Harl::complain( std::string level )
@@ -47,10 +47,26 @@ void Harl::complain( std::string level )
 	{
 		if (levels[i] == level)
 		{
-			(this->*functions[i])();
-			return;
+			std::cout << "[ " << level << " ]" << std::endl;
+			break ;
 		}
 		i++;
 	}
-	std::cout << "[UNKNOWN] unrecognized level" << std::endl;
+	switch (i)
+	{
+		case 0:
+			(this->*functions[0])();
+		case 1:
+			(this->*functions[1])();
+		case 2:
+			(this->*functions[2])();
+		case 3:
+		{
+			(this->*functions[3])();
+			break ;
+		}
+		default:
+			std::cout << "No such level available." << std::endl;
+
+	}
 }
