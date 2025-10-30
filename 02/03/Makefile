@@ -1,4 +1,4 @@
-NAME = harlFilter
+NAME = BSP
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -7,7 +7,12 @@ OBJ_DIR = obj
 INCLUDE_DIR = include
 
 SRCS = \
-	Harl.cpp \
+	Fixed_arithmetique.cpp \
+	Fixed_comparaisons.cpp \
+	Fixed_incrementation.cpp \
+	Fixed_minmax.cpp \
+	Fixed.cpp \
+	Point.cpp \
 
 SRC_ALL = \
 	main.cpp \
