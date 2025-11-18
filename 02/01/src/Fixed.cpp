@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:32:24 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/29 15:33:40 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:58:29 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,9 @@ int Fixed::toInt( void ) const
 	return this->_integer >> _fractionalBits;
 }
 
+// Une surcharge de l’opérateur d’insertion («) qui insère une représentation en vir-
+// gule flottante du nombre à virgule fixe dans le flux de sortie (objet output stream)
+// passé en paramètre.
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
