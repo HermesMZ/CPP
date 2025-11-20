@@ -6,11 +6,19 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:05:16 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 11:41:25 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/20 14:22:32 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
+	std::cout << "ScavTrap default constructed." << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name)
 {
