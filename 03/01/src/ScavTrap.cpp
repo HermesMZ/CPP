@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:05:16 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/18 14:29:11 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/20 11:41:25 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name)
 {
-	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
@@ -24,6 +23,7 @@ ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const & other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap " << this->name << " copy constructed." << std::endl;
+	*this = other;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & other)

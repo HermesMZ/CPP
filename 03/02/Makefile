@@ -1,6 +1,6 @@
 NAME = ClapTrap
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-shadow
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -8,13 +8,13 @@ INCLUDE_DIR = include
 
 SRCS = \
 	ClapTrap.cpp \
+	FragTrap.cpp \
 	ScavTrap.cpp \
-
-SRC_ALL = \
 	main.cpp \
-	$(addprefix $(SRC_DIR)/, $(SRCS))
 
-OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o, $(SRC_ALL))
+SRC_ALL = $(addprefix $(SRC_DIR)/, $(SRCS))
+
+OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o, $(SRC_ALL))
 
 all: $(NAME)
 
@@ -24,8 +24,8 @@ $(NAME): $(OBJS)
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
