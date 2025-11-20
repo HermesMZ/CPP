@@ -8,6 +8,7 @@ INCLUDE_DIR = include
 
 SRCS = \
 	ClapTrap.cpp \
+	DiamondTrap.cpp \
 	FragTrap.cpp \
 	ScavTrap.cpp \
 	main.cpp \

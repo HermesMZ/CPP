@@ -6,11 +6,11 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:51:15 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 14:46:32 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:34:56 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 #include <iostream>
 
 void printSeparator(std::string title) {
@@ -19,103 +19,146 @@ void printSeparator(std::string title) {
 
 int main()
 {
-	// Test 1: Constructeur par défaut
 	printSeparator("TEST 1: Constructeur par défaut");
 	{
-		FragTrap frag1;
-		frag1.highFivesGuys();
+		DiamondTrap diamond1;
+		diamond1.whoAmI();
 	}
 
-	// Test 2: Constructeur avec nom
-	printSeparator("TEST 2: Constructeur avec nom");
+	printSeparator("TEST 2: Constructeur avec paramètre");
 	{
-		FragTrap frag2("Fraggy");
-		frag2.highFivesGuys();
+		DiamondTrap diamond2("Diamant");
+		diamond2.whoAmI();
 	}
 
-	// Test 3: Constructeur de copie
-	printSeparator("TEST 3: Constructeur de copie");
+	printSeparator("TEST 4: Méthode attack (héritée de ScavTrap)");
 	{
-		FragTrap original("Original");
-		FragTrap copy(original);
-		std::cout << "\nTest des deux instances:" << std::endl;
-		original.highFivesGuys();
-		copy.highFivesGuys();
+		DiamondTrap attacker("Attacker");
+		attacker.attack("Target");
+		attacker.attack("Target");
 	}
 
-	// Test 4: Opérateur d'assignation
-	printSeparator("TEST 4: Opérateur d'assignation");
+	printSeparator("TEST 5: Méthode takeDamage");
 	{
-		FragTrap frag1("FragOne");
-		FragTrap frag2("FragTwo");
-		std::cout << "\nAvant assignation:" << std::endl;
-		frag1.highFivesGuys();
-		frag2.highFivesGuys();
-		
-		frag2 = frag1;
-		std::cout << "\nAprès assignation (frag2 = frag1):" << std::endl;
-		frag1.highFivesGuys();
-		frag2.highFivesGuys();
+		DiamondTrap defender("Defender");
+		defender.takeDamage(30);
+		defender.takeDamage(50);
+		defender.takeDamage(30); // Devrait être mort
 	}
 
-	// Test 5: Attaques basiques
-	printSeparator("TEST 5: Attaques basiques");
+	printSeparator("TEST 6: Méthode beRepaired");
 	{
-		FragTrap attacker("Destroyer");
-		attacker.attack("Target1");
-		attacker.attack("Target2");
-		attacker.attack("Target3");
-	}
-
-	// Test 6: Dégâts
-	printSeparator("TEST 6: Prise de dégâts");
-	{
-		FragTrap tank("Tank");
-		tank.takeDamage(30);
-		tank.takeDamage(50);
-		tank.takeDamage(15);
-	}
-
-	// Test 7: Réparations
-	printSeparator("TEST 7: Réparations");
-	{
-		FragTrap healer("Healer");
+		DiamondTrap healer("Healer");
 		healer.takeDamage(40);
 		healer.beRepaired(20);
-		healer.beRepaired(30);
+		healer.beRepaired(10);
 	}
 
-	// Test 8: Épuisement de l'énergie
-	printSeparator("TEST 8: Épuisement de l'énergie (100 actions)");
+	printSeparator("TEST 7: Épuisement des points d'énergie");
 	{
-		FragTrap energyTest("Energizer");
-		std::cout << "Exécution de 100 attaques..." << std::endl;
-		for (int i = 0; i < 100; i++) {
-			energyTest.attack("Dummy");
+		DiamondTrap tired("Tired");
+		// ScavTrap a 50 points d'énergie
+		for (int i = 0; i < 52; i++) {
+			tired.attack("Enemy");
 		}
-		std::cout << "\nTentative d'attaque après épuisement:" << std::endl;
-		energyTest.attack("ShouldFail");
-		std::cout << "\nTentative de réparation après épuisement:" << std::endl;
-		energyTest.beRepaired(10);
 	}
 
-	// Test 9: Destruction complète (HP à 0)
-	printSeparator("TEST 9: Destruction complète");
+	printSeparator("TEST 8: Actions après la mort");
 	{
-		FragTrap destroyed("Doomed");
-		destroyed.takeDamage(100);
-		std::cout << "\nTentative d'actions après destruction:" << std::endl;
-		destroyed.attack("CantAttack");
-		destroyed.beRepaired(50);
-		destroyed.highFivesGuys();
+		DiamondTrap dead("Dead");
+		dead.takeDamage(100);
+		dead.attack("Someone");
+		dead.beRepaired(50);
+		dead.whoAmI();
 	}
 
-	// Test 10: Overdamage
-	printSeparator("TEST 10: Dégâts excessifs");
+	printSeparator("TEST 9: Méthode guardGate (de ScavTrap)");
 	{
-		FragTrap overkill("Overkill");
-		overkill.takeDamage(150); // Plus que ses HP
+		DiamondTrap guard("Guardian");
+		guard.guardGate();
 	}
 
+	printSeparator("TEST 10: Méthode highFivesGuys (de FragTrap)");
+	{
+		DiamondTrap friendly("Friendly");
+		friendly.highFivesGuys();
+	}
+
+	printSeparator("TEST 11: Constructeur de copie");
+	{
+		DiamondTrap original("Original");
+		original.takeDamage(20);
+		DiamondTrap copy(original);
+		std::cout << "\nOriginal: ";
+		original.whoAmI();
+		std::cout << "Copy: ";
+		copy.whoAmI();
+	}
+
+	printSeparator("TEST 12: Opérateur d'affectation");
+	{
+		DiamondTrap first("First");
+		first.takeDamage(30);
+		DiamondTrap second("Second");
+		second = first;
+		std::cout << "\nFirst: ";
+		first.whoAmI();
+		std::cout << "Second: ";
+		second.whoAmI();
+	}
+
+	printSeparator("TEST 13: Combat complet");
+	{
+		DiamondTrap fighter1("Warrior");
+		DiamondTrap fighter2("Knight");
+		
+		fighter1.whoAmI();
+		fighter2.whoAmI();
+		
+		std::cout << "\n--- Round 1 ---" << std::endl;
+		fighter1.attack("Knight");
+		fighter2.takeDamage(30);
+		
+		std::cout << "\n--- Round 2 ---" << std::endl;
+		fighter2.attack("Warrior");
+		fighter1.takeDamage(30);
+		
+		std::cout << "\n--- Round 3 ---" << std::endl;
+		fighter1.beRepaired(15);
+		fighter2.beRepaired(15);
+		
+		std::cout << "\n--- Capacités spéciales ---" << std::endl;
+		fighter1.guardGate();
+		fighter2.highFivesGuys();
+	}
+
+	printSeparator("TEST 14: Multiple DiamondTraps");
+	{
+		DiamondTrap* army[3];
+		army[0] = new DiamondTrap("Alpha");
+		army[1] = new DiamondTrap("Beta");
+		army[2] = new DiamondTrap("Gamma");
+		
+		for (int i = 0; i < 3; i++) {
+			army[i]->whoAmI();
+		}
+		
+		std::cout << "\nCleaning up army..." << std::endl;
+		for (int i = 0; i < 3; i++) {
+			delete army[i];
+		}
+	}
+
+	printSeparator("TEST 15: Cas limites");
+	{
+		DiamondTrap edge("");
+		edge.whoAmI();
+		edge.attack("");
+		edge.takeDamage(0);
+		edge.beRepaired(0);
+	}
+
+	printSeparator("FIN DES TESTS");
+	
 	return 0;
 }
