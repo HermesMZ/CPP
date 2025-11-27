@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:16:49 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 15:00:44 by mzimeris         ###   ########.fr       */
+/*   Created: 2025/10/17 15:45:08 by mzimeris          #+#    #+#             */
+/*   Updated: 2025/11/27 11:59:34 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Weapon.hpp"
 
-#include <string>
-#include <iostream>
+Weapon::Weapon(std::string type)
+{
+	this->type = type;
+}
 
-class Animal {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(const Animal& other);
-		virtual ~Animal();
-		Animal& operator=(const Animal& other);
-		virtual void makeSound() const;
-		std::string getType() const;
-};
+Weapon::~Weapon()
+{
+}
 
-#endif // ANIMAL_HPP
+const std::string& Weapon::getType() const
+{
+	return this->type;
+}
+
+void Weapon::setType(std::string type)
+{
+	this->type = type;
+}

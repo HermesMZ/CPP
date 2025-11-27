@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:51:15 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 14:58:51 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/27 16:32:52 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,21 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	std::cout << std::endl;
-	delete i;
-	delete j;
-	delete meta;
-	std::cout << std::endl;
-
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-	dog->makeSound();
-	cat->makeSound();
-	std::cout << std::endl;
-	delete cat;
-	delete dog;
-	std::cout << std::endl;
-
-	const WrongAnimal* wrongAnimal = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
-	wrongAnimal->makeSound();
-	wrongCat->makeSound();
-	delete wrongAnimal;
-	delete wrongCat;
-
-return 0;
+int main() {
+	// Animal pigeon = Animal();
+	Animal* animals[4];
+	for (int i = 0; i < 4; i++) {
+		if (i < 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+		std::cout << std::endl;
+	}
+	for (int i = 0; i < 4; i++) {
+		std::cout << "Animal type: " << animals[i]->getType() << std::endl;
+		animals[i]->makeSound();
+		delete animals[i];
+		std::cout << std::endl;
+	}
+	return 0;
 }

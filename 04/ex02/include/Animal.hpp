@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:16:49 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 15:00:44 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/27 16:30:30 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal {
 		Animal(const Animal& other);
 		virtual ~Animal();
 		Animal& operator=(const Animal& other);
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		std::string getType() const;
 };
 

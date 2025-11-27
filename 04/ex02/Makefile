@@ -8,11 +8,12 @@ INCLUDE_DIR = include
 
 SRCS = \
 	Animal.cpp \
+	Brain.cpp \
 	Cat.cpp \
 	Dog.cpp \
+	main.cpp \
 	WrongAnimal.cpp \
 	WrongCat.cpp \
-	main.cpp \
 
 SRC_ALL = $(addprefix $(SRC_DIR)/, $(SRCS))
 
