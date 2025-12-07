@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:14:39 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/28 11:42:46 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:34:26 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ICHARACTER_HPP
 
 #include <string>
-#include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

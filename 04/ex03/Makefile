@@ -1,4 +1,4 @@
-NAME = Animals
+NAME = Materia
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -7,7 +7,14 @@ OBJ_DIR = obj
 INCLUDE_DIR = include
 
 SRCS = \
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	ICharacter.cpp \
+	IMateriaSource.cpp \
 	main.cpp \
+	MateriaSource.cpp \
 
 SRC_ALL = $(addprefix $(SRC_DIR)/, $(SRCS))
 
