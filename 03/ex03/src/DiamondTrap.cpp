@@ -6,21 +6,18 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:00:58 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 15:48:20 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/09 16:05:27 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name", 100, 50, 30), FragTrap(), ScavTrap() {
 	this->name = "Default";
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
 	std::cout << "DiamondTrap Default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string const & name) : ClapTrap(name + "_clap_name"), FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name") {
+DiamondTrap::DiamondTrap(std::string const & name) : ClapTrap(name + "_clap_name", 100, 50, 30), FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name") {
 	this->name = name;
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;

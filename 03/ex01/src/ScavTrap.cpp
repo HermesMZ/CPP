@@ -6,25 +6,19 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:05:16 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 14:22:32 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:41:42 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap("Default", 100, 50, 20)
 {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
 	std::cout << "ScavTrap default constructed." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string const & name) : ClapTrap(name, 100, 50, 20)
 {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
 	std::cout << "ScavTrap " << this->name << " constructed." << std::endl;
 }
 

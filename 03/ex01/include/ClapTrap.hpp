@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:03:29 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 14:18:46 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:41:42 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ClapTrap {
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage);
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap& other);
 		virtual ~ClapTrap();
