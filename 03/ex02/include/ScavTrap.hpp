@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:04:58 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/12/09 15:50:57 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/11/20 14:26:11 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+//scavtrap herite de claptrap
 class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap();
