@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:27:58 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/28 11:37:15 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:29:43 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ AMateria* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-	AMateria::use(target);
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 

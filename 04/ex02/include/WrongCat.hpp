@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:51:18 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 15:01:35 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:23:38 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat(const WrongCat& other);
 		~WrongCat();
 		WrongCat& operator=(const WrongCat& other);
-		void makeSound() const; // pas utilisee parce que WrongAnimal n'a pas de methodes virtuelles
+		void makeSound() const;
 };
 
 #endif // WRONGCAT_HPP

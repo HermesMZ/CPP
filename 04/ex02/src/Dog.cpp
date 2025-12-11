@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:20:40 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 16:28:22 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:29:04 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog() {
 
 Dog::Dog(const Dog& other) {
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = other;
+	this->type = other.type;
 	this->brain = new Brain(*other.brain);
 }
 

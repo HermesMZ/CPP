@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:51:15 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 14:58:51 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:04:35 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,13 @@ int main()
 
 	const WrongAnimal* wrongAnimal = new WrongAnimal();
 	const WrongAnimal* wrongCat = new WrongCat();
+	const WrongCat* wrongKitty = new WrongCat();
 	wrongAnimal->makeSound();
 	wrongCat->makeSound();
+	wrongKitty->makeSound();
 	delete wrongAnimal;
 	delete wrongCat;
+	delete wrongKitty;
 
 return 0;
 }

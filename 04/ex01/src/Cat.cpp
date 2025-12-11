@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:20:40 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 15:19:04 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:13:07 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat() {
 
 Cat::Cat(const Cat& other) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = other;
+	this->type = other.type;
 	this->brain = new Brain(*other.brain);
 }
 

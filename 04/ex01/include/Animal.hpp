@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:16:49 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 16:21:16 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:17:57 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Animal {
 	public:
 		Animal();
 		Animal(const Animal& other);
+		// ~Animal();
 		virtual ~Animal();
 		Animal& operator=(const Animal& other);
 		virtual void makeSound() const;

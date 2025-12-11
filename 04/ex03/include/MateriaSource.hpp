@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 13:42:58 by zoum              #+#    #+#             */
-/*   Updated: 2025/12/04 13:43:01 by zoum             ###   ########.fr       */
+/*   Updated: 2025/12/10 12:49:32 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ public:
 
     virtual void learnMateria(AMateria* m);
     virtual AMateria* createMateria(std::string const & type);
+    void printMaterias() const;
+	
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:26:23 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/28 11:37:04 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:29:32 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Cure& Cure::operator=(const Cure& other)
 
 void Cure::use(ICharacter& target)
 {
-	AMateria::use(target);
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 

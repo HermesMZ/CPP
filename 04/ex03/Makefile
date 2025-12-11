@@ -11,8 +11,6 @@ SRCS = \
 	Character.cpp \
 	Cure.cpp \
 	Ice.cpp \
-	ICharacter.cpp \
-	IMateriaSource.cpp \
 	main.cpp \
 	MateriaSource.cpp \
 

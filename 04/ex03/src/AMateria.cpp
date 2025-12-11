@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:24:31 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/28 11:34:22 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:29:40 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ AMateria::AMateria(const AMateria& other) : type(other.type)
 
 AMateria& AMateria::operator=(const AMateria& other)
 {
-	if (this != &other)
-	{
-		this->type = other.type;
-	}
+	(void)other;
 	return *this;
 }

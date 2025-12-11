@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:16:09 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/28 11:31:33 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 12:16:18 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@
 class IMateriaSource
 {
 	public:
-		IMateriaSource();
-		IMateriaSource(const IMateriaSource& other);
-		virtual ~IMateriaSource();
-		IMateriaSource& operator=(const IMateriaSource& other);
-		
+		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria*) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
 };

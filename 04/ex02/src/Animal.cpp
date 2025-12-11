@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:16:34 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 16:29:58 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:25:59 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ Animal& Animal::operator=(const Animal& other) {
 	return *this;
 }
 
-// void Animal::makeSound() const {
-// 	std::cout << "Animal sound" << std::endl;
-// }
+void Animal::makeSound() const {
+	std::cout << "Animal sound" << std::endl;
+}
 
 std::string Animal::getType() const {
 	return this->type;
