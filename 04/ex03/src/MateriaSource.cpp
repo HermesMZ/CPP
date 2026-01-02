@@ -6,7 +6,7 @@
 /*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 13:42:24 by zoum              #+#    #+#             */
-/*   Updated: 2025/12/10 12:49:35 by mzimeris         ###   ########.fr       */
+/*   Updated: 2025/12/15 13:00:29 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void MateriaSource::learnMateria(AMateria* m)
             return;
         }
     }
-    // inventory full -> delete the passed materia to avoid leak
     delete m;
 }
 
