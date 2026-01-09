@@ -1,4 +1,4 @@
-NAME = Materia
+NAME = Form
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -7,12 +7,12 @@ OBJ_DIR = obj
 INCLUDE_DIR = include
 
 SRCS = \
-	AMateria.cpp \
-	Character.cpp \
-	Cure.cpp \
-	Ice.cpp \
+	Bureaucrat.cpp \
+	AForm.cpp \
 	main.cpp \
-	MateriaSource.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
 
 SRC_ALL = $(addprefix $(SRC_DIR)/, $(SRCS))
 

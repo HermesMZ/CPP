@@ -8,8 +8,11 @@ INCLUDE_DIR = include
 
 SRCS = \
 	Bureaucrat.cpp \
-	Form.cpp \
+	AForm.cpp \
 	main.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
 
 SRC_ALL = $(addprefix $(SRC_DIR)/, $(SRCS))
 
