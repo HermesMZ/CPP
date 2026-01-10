@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 13:42:24 by zoum              #+#    #+#             */
-/*   Updated: 2025/12/15 13:00:29 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/01/10 13:50:47 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
-#include <iostream>
 
 MateriaSource::MateriaSource()
 {
@@ -81,20 +80,4 @@ AMateria* MateriaSource::createMateria(std::string const & type)
             return _models[i]->clone();
     }
     return NULL;
-}
-
-void MateriaSource::printMaterias() const
-{
-    std::cout << "Materias disponibles dans la source:" << std::endl;
-    int count = 0;
-    for (int i = 0; i < 4; ++i)
-    {
-        if (_models[i])
-        {
-            std::cout << "  [" << i << "] " << _models[i]->getType() << std::endl;
-            count++;
-        }
-    }
-    if (count == 0)
-        std::cout << "  (aucune materia apprise)" << std::endl;
 }
