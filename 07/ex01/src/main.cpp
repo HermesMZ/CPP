@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:03:50 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 16:59:39 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,29 @@
 #include <string>
 
 template <typename T>
-void printElement(const T& element)
-{
+void printElement(const T& element) {
 	std::cout << element << " ";
 }
 
 template <typename T>
-void incrementElement(T& element)
-{
+void incrementElement(T& element) {
 	element++;
 }
 
 template <typename T>
-void doubleElement(T& element)
-{
+void doubleElement(T& element) {
 	element *= 2;
 }
 
-void printString(const std::string& str)
-{
+void printString(const std::string& str) {
 	std::cout << str << " ";
 }
 
-void addExclamation(std::string& str)
-{
+void addExclamation(std::string& str) {
 	str += "!";
 }
 
-int main()
-{
+int main() {
 	std::cout << "=== Test 1: int array with print (const ref) ===" << std::endl;
 	int intArray[] = {1, 2, 3, 4, 5};
 	size_t intLen = 5;

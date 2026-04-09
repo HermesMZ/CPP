@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:36:12 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/21 14:53:19 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,26 @@
 
 static bool g_phoneBookVerbose = true;
 
-void PhoneBook::setVerbose(bool v)
-{
+void PhoneBook::setVerbose(bool v) {
 	g_phoneBookVerbose = v;
 }
 
-bool PhoneBook::isVerbose()
-{
+bool PhoneBook::isVerbose() {
 	return g_phoneBookVerbose;
 }
 
-PhoneBook::PhoneBook()
-{
+PhoneBook::PhoneBook() {
 	if (g_phoneBookVerbose)
 		std::cout << "PhoneBook created!" << std::endl;
 	this->contactCount = 0;
 }
 
-PhoneBook::~PhoneBook()
-{
+PhoneBook::~PhoneBook() {
 	if (g_phoneBookVerbose)
 		std::cout << "PhoneBook destroyed!" << std::endl;
 }
 
-static bool readNonEmptyField(const std::string &prompt, std::string &out)
-{
+static bool readNonEmptyField(const std::string &prompt, std::string &out) {
 	while (true)
 	{
 		std::cout << prompt;
@@ -55,8 +50,7 @@ static bool readNonEmptyField(const std::string &prompt, std::string &out)
 	}
 }
 
-void PhoneBook::addContact()
-{
+void PhoneBook::addContact() {
 	if (this->contactCount == 8)
 	{
 		for (int i = 1; i < this->contactCount; i++)
@@ -96,8 +90,7 @@ void PhoneBook::addContact()
 	if (g_phoneBookVerbose) std::cout << "Contact added! Total contacts: " << this->contactCount << std::endl;
 }
 
-void PhoneBook::addContact(const Contact& contact)
-{
+void PhoneBook::addContact(const Contact& contact) {
 	if (this->contactCount == 8)
 	{
 		for (int i = 1; i < this->contactCount; i++)
@@ -125,15 +118,13 @@ void PhoneBook::addContact(const Contact& contact)
 // Sinon, affichez les informations du contact, une par ligne
 
 // Utility: format a field to 10 chars, truncating and adding a '.' if too long
-static std::string formatField(const std::string &s)
-{
+static std::string formatField(const std::string &s) {
 	if (s.size() > 10)
 		return s.substr(0, 9) + ".";
 	return s;
 }
 
-void PhoneBook::displayContacts() const
-{
+void PhoneBook::displayContacts() const {
 	if (this->contactCount == 0)
 	{
 		std::cout << "No contacts to display." << std::endl;

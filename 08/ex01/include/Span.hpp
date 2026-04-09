@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:09:54 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 17:09:55 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 #include <algorithm>
 #include <limits>
 
-class Span
-{
+class Span {
 private:
 	unsigned int _maxSize;
 	std::vector<int> _numbers;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:42:17 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/27 11:59:37 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 #include <iostream>
 
-class Weapon
-{
+class Weapon {
 private:
 	std::string type;
 public:

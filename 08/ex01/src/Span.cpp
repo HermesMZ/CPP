@@ -6,26 +6,22 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:10:05 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 17:10:06 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span() : _maxSize(0)
-{
+Span::Span() : _maxSize(0) {
 }
 
-Span::Span(unsigned int N) : _maxSize(N)
-{
+Span::Span(unsigned int N) : _maxSize(N) {
 }
 
-Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers)
-{
+Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers) {
 }
 
-Span& Span::operator=(const Span& other)
-{
+Span& Span::operator=(const Span& other) {
 	if (this != &other)
 	{
 		_maxSize = other._maxSize;
@@ -34,19 +30,16 @@ Span& Span::operator=(const Span& other)
 	return *this;
 }
 
-Span::~Span()
-{
+Span::~Span() {
 }
 
-void Span::addNumber(int number)
-{
+void Span::addNumber(int number) {
 	if (_numbers.size() >= _maxSize)
 		throw SpanFullException();
 	_numbers.push_back(number);
 }
 
-int Span::shortestSpan() const
-{
+int Span::shortestSpan() const {
 	if (_numbers.size() <= 1)
 		throw NoSpanException();
 
@@ -64,8 +57,7 @@ int Span::shortestSpan() const
 	return minSpan;
 }
 
-int Span::longestSpan() const
-{
+int Span::longestSpan() const {
 	if (_numbers.size() <= 1)
 		throw NoSpanException();
 
@@ -75,12 +67,10 @@ int Span::longestSpan() const
 	return max - min;
 }
 
-const char* Span::SpanFullException::what() const throw()
-{
+const char* Span::SpanFullException::what() const throw() {
 	return "Span is already full";
 }
 
-const char* Span::NoSpanException::what() const throw()
-{
+const char* Span::NoSpanException::what() const throw() {
 	return "No span can be found (need at least 2 numbers)";
 }

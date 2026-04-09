@@ -6,8 +6,7 @@
 
 #define MAX_VAL 750
 
-int main(int, char**)
-{
+int main(int, char**) {
 	std::cout << "=== Test 1: Empty array ===" << std::endl;
 	{
 		Array<int> empty;
@@ -30,10 +29,7 @@ int main(int, char**)
 		}
 		
 		std::cout << "Array elements: ";
-		for (unsigned int i = 0; i < numbers.size(); i++) {
-			std::cout << numbers[i] << " ";
-		}
-		std::cout << std::endl;
+		std::cout << numbers << std::endl;
 	}
 
 	std::cout << "\n=== Test 3: Copy constructor ===" << std::endl;
@@ -45,15 +41,10 @@ int main(int, char**)
 		
 		Array<int> copy(original);
 		std::cout << "Original array: ";
-		for (unsigned int i = 0; i < original.size(); i++) {
-			std::cout << original[i] << " ";
-		}
-		std::cout << std::endl;
+		std::cout << original << std::endl;
 		
 		std::cout << "Copy array: ";
-		for (unsigned int i = 0; i < copy.size(); i++) {
-			std::cout << copy[i] << " ";
-		}
+		std::cout << copy << std::endl;
 		std::cout << std::endl;
 		
 		copy[0] = 999;
@@ -72,15 +63,21 @@ int main(int, char**)
 		Array<int> arr2(2);
 		arr2[0] = 1;
 		arr2[1] = 2;
+
+		std::cout << "arr1 elements: ";
+		std::cout << arr1 << std::endl;
+		std::cout << std::endl;
+
+		std::cout << "arr2 elements: ";
+		std::cout << arr2 << std::endl;
+		std::cout << std::endl;
 		
 		std::cout << "Before assignment - arr2 size: " << arr2.size() << std::endl;
 		arr2 = arr1;
 		std::cout << "After assignment - arr2 size: " << arr2.size() << std::endl;
 		
 		std::cout << "arr2 elements: ";
-		for (unsigned int i = 0; i < arr2.size(); i++) {
-			std::cout << arr2[i] << " ";
-		}
+		std::cout << arr2 << std::endl;
 		std::cout << std::endl;
 		
 		arr2[1] = 999;
@@ -116,10 +113,7 @@ int main(int, char**)
 		strings[2] = "!";
 		
 		std::cout << "String array: ";
-		for (unsigned int i = 0; i < strings.size(); i++) {
-			std::cout << strings[i] << " ";
-		}
-		std::cout << std::endl;
+		std::cout << strings << std::endl;
 	}
 
 	std::cout << "\n=== Test 7: Large array test ===" << std::endl;
@@ -128,8 +122,7 @@ int main(int, char**)
 		int* mirror = new int[MAX_VAL];
 		srand(time(NULL));
 		
-		for (int i = 0; i < MAX_VAL; i++)
-		{
+		for (int i = 0; i < MAX_VAL; i++) {
 			const int value = rand();
 			numbers[i] = value;
 			mirror[i] = value;
@@ -140,35 +133,28 @@ int main(int, char**)
 			Array<int> test(tmp);
 		}
 
-		for (int i = 0; i < MAX_VAL; i++)
-		{
-			if (mirror[i] != numbers[i])
-			{
+		for (int i = 0; i < MAX_VAL; i++) {
+			if (mirror[i] != numbers[i]) {
 				std::cerr << "didn't save the same value!!" << std::endl;
 				delete[] mirror;
 				return 1;
 			}
 		}
 		
-		try
-		{
+		try {
 			numbers[-2] = 0;
 		}
-		catch(const std::exception& e)
-		{
+		catch(const std::exception& e) {
 			std::cout << "Exception caught for negative index" << std::endl;
 		}
-		try
-		{
+		try {
 			numbers[MAX_VAL] = 0;
 		}
-		catch(const std::exception& e)
-		{
+		catch(const std::exception& e) {
 			std::cout << "Exception caught for index MAX_VAL" << std::endl;
 		}
 
-		for (int i = 0; i < MAX_VAL; i++)
-		{
+		for (int i = 0; i < MAX_VAL; i++) {
 			numbers[i] = rand();
 		}
 		delete[] mirror;

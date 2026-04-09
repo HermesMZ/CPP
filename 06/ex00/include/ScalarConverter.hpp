@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 14:38:37 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/10 14:41:13 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@
 #include <limits>
 #include <iomanip>
 
-class ScalarConverter
-{
+class ScalarConverter {
 	public:
 		static void convert(const std::string &literal);
 

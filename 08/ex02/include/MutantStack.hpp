@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:10:13 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 17:10:14 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include <deque>
 
 template <typename T>
-class MutantStack : public std::stack<T>
-{
+class MutantStack : public std::stack<T> {
 public:
 	MutantStack() : std::stack<T>() {}
 	MutantStack(const MutantStack& other) : std::stack<T>(other) {}

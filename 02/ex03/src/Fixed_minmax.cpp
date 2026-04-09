@@ -3,38 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed_minmax.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:41:32 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/30 13:10:23 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed &Fixed::min(Fixed &a,  Fixed &b)
-{
+Fixed &Fixed::min(Fixed &a,  Fixed &b) {
 	if (a < b)
 		return a;
 	return b;
 }
 
-Fixed &Fixed::max(Fixed &a, Fixed &b)
-{
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
 	if (a > b)
 		return a;
 	return b;
 }
 
-const Fixed &Fixed::min(const Fixed &a,  const Fixed &b)
-{
+const Fixed &Fixed::min(const Fixed &a,  const Fixed &b) {
 	if (a < b)
 		return a;
 	return b;
 }
 
-const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
-{
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
 	if (a > b)
 		return a;
 	return b;

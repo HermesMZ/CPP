@@ -6,20 +6,18 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 13:42:24 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/10 13:50:47 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource()
-{
+MateriaSource::MateriaSource() {
     for (int i = 0; i < 4; ++i)
         _models[i] = NULL;
 }
 
-MateriaSource::MateriaSource(const MateriaSource& other) : IMateriaSource(other)
-{
+MateriaSource::MateriaSource(const MateriaSource& other) : IMateriaSource(other) {
     for (int i = 0; i < 4; ++i)
     {
         if (other._models[i])
@@ -29,8 +27,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) : IMateriaSource(other)
     }
 }
 
-MateriaSource& MateriaSource::operator=(const MateriaSource& other)
-{
+MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
     if (this != &other)
     {
         for (int i = 0; i < 4; ++i)
@@ -47,8 +44,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
     return *this;
 }
 
-MateriaSource::~MateriaSource()
-{
+MateriaSource::~MateriaSource() {
     for (int i = 0; i < 4; ++i)
     {
         if (_models[i])
@@ -56,8 +52,7 @@ MateriaSource::~MateriaSource()
     }
 }
 
-void MateriaSource::learnMateria(AMateria* m)
-{
+void MateriaSource::learnMateria(AMateria* m) {
     if (!m)
         return;
     for (int i = 0; i < 4; ++i)
@@ -72,8 +67,7 @@ void MateriaSource::learnMateria(AMateria* m)
     delete m;
 }
 
-AMateria* MateriaSource::createMateria(std::string const & type)
-{
+AMateria* MateriaSource::createMateria(std::string const & type) {
     for (int i = 0; i < 4; ++i)
     {
         if (_models[i] && _models[i]->getType() == type)

@@ -3,37 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:00:12 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/21 15:04:09 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-void Harl::debug( void )
-{
+void Harl::debug( void ) {
 	std::cout << "[DEBUG]   contextual informations" << std::endl;
 }
 
-void Harl::info( void )
-{
+void Harl::info( void ) {
 	std::cout << "[INFO]    extensive informations" << std::endl;
 }
 
-void Harl::warning( void )
-{
+void Harl::warning( void ) {
 	std::cout << "[WARNING] potential issue in the system" << std::endl;
 }
 
-void Harl::error( void )
-{
+void Harl::error( void ) {
 	std::cout << "[ERROR]   unrecoverable error has occurred" << std::endl;
 }
 
-void Harl::complain( std::string level )
-{
+void Harl::complain( std::string level ) {
 	void	(Harl::*functions[])( void ) =
 	{
 		&Harl::debug,

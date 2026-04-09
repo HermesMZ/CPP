@@ -3,68 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:32:24 by mzimeris          #+#    #+#             */
-/*   Updated: 2026/01/02 15:08:06 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-{
+Fixed::Fixed() {
 	this->_integer = 0;
 }
 
-Fixed::~Fixed()
-{
+Fixed::~Fixed() {
 }
 
-Fixed::Fixed(const Fixed &other) : _integer(other._integer)
-{
+Fixed::Fixed(const Fixed &other) : _integer(other._integer) {
 }
 
-Fixed::Fixed(const int value)
-{
+Fixed::Fixed(const int value) {
     _integer = value << _fractionalBits;
 }
 
-Fixed::Fixed(const float value)
-{
+Fixed::Fixed(const float value) {
 	this->_integer = roundf(value * (1 << _fractionalBits));
 }
 
 
-Fixed & Fixed::operator=(const Fixed &other)
-{
+Fixed & Fixed::operator=(const Fixed &other) {
 	if (this != &other)
 		this->_integer = other._integer;
 	return *this;
 }
 
-int Fixed::getRawBits( void ) const
-{
+int Fixed::getRawBits( void ) const {
 	return this->_integer;
 }
 
-void Fixed::setRawBits( int const raw )
-{
+void Fixed::setRawBits( int const raw ) {
 	this->_integer = raw;
 }
 
-float Fixed::toFloat( void ) const
-{
+float Fixed::toFloat( void ) const {
 	return static_cast<float>(this->_integer) / (1 << _fractionalBits);
 }
 
-int Fixed::toInt( void ) const
-{
+int Fixed::toInt( void ) const {
 	return this->_integer >> _fractionalBits;
 }
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
-{
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
     out << fixed.toFloat();
     return out;
 }

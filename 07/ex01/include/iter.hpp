@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:03:57 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 00:03:58 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 18:06:59 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,15 @@
 #include <cstddef>
 
 template <typename T, typename F>
-void iter(T* array, size_t length, F func)
-{
-	for (size_t i = 0; i < length; i++)
-	{
+void iter(T* array, size_t length, F func) {
+	for (size_t i = 0; i < length; i++)	{
 		func(array[i]);
 	}
 }
 
 template <typename T, typename F>
-void iter(const T* array, size_t length, F func)
-{
-	for (size_t i = 0; i < length; i++)
-	{
+void iter(const T* array, size_t length, F func) {
+	for (size_t i = 0; i < length; i++) {
 		func(array[i]);
 	}
 }

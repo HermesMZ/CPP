@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:10:01 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 17:10:02 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include <ctime>
 #include <cstdlib>
 
-int main()
-{
+int main() {
 	std::cout << "=== Basic test from subject ===" << std::endl;
 	{
 		Span sp = Span(5);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:51:15 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 14:46:32 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void printSeparator(std::string title) {
 	std::cout << "\n==================== " << title << " ====================\n" << std::endl;
 }
 
-int main()
-{
+int main() {
 	// Test 1: Constructeur par défaut
 	printSeparator("TEST 1: Constructeur par défaut");
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:32:24 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/30 13:36:19 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ Fixed Point::getY() const {
 	return this->y;
 }
 
-const Fixed &Point::min(const Fixed &a,  const Fixed &b, const Fixed &c)
-{
+const Fixed &Point::min(const Fixed &a,  const Fixed &b, const Fixed &c) {
 	if (a < b && a < c)
 		return a;
 	if (b < a && b < c)
@@ -44,8 +43,7 @@ const Fixed &Point::min(const Fixed &a,  const Fixed &b, const Fixed &c)
 	return a;
 }
 
-const Fixed &Point::max(const Fixed &a,  const Fixed &b, const Fixed &c)
-{
+const Fixed &Point::max(const Fixed &a,  const Fixed &b, const Fixed &c) {
 	if (a > b && a > c)
 		return a;
 	if (b > a && b > c)

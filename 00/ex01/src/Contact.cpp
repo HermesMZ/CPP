@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:41:13 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/11 04:27:19 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,74 +14,60 @@
 
 static bool g_contactVerbose = true;
 
-void Contact::setVerbose(bool v)
-{
+void Contact::setVerbose(bool v) {
 	g_contactVerbose = v;
 }
 
-bool Contact::isVerbose()
-{
+bool Contact::isVerbose() {
 	return g_contactVerbose;
 }
 
-Contact::Contact()
-{
+Contact::Contact() {
 	if (g_contactVerbose)
 		std::cout << "Contact created!" << std::endl;
 }
 
-Contact::~Contact()
-{
+Contact::~Contact() {
 	if (g_contactVerbose)
 		std::cout << "Contact destroyed!" << std::endl;
 }
 
-void Contact::setFirstName(const std::string& name)
-{
+void Contact::setFirstName(const std::string& name) {
 	this->firstName = name;
 }
 
-void Contact::setLastName(const std::string& name)
-{
+void Contact::setLastName(const std::string& name) {
 	this->lastName = name;
 }
 
-void Contact::setNickname(const std::string& nickname)
-{
+void Contact::setNickname(const std::string& nickname) {
 	this->nickname = nickname;
 }
 	
-void Contact::setPhoneNumber(const std::string& phoneNumber)
-{
+void Contact::setPhoneNumber(const std::string& phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 
-void Contact::setDarkestSecret(const std::string& darkestSecret)
-{
+void Contact::setDarkestSecret(const std::string& darkestSecret) {
 	this->darkestSecret = darkestSecret;
 }
 
-std::string Contact::getFirstName() const
-{
+std::string Contact::getFirstName() const {
 	return this->firstName;
 }
 
-std::string Contact::getLastName() const
-{
+std::string Contact::getLastName() const {
 	return this->lastName;
 }
 
-std::string Contact::getNickname() const
-{
+std::string Contact::getNickname() const {
 	return this->nickname;
 }
 
-std::string Contact::getPhoneNumber() const
-{
+std::string Contact::getPhoneNumber() const {
 	return this->phoneNumber;
 }
 
-std::string Contact::getDarkestSecret() const
-{
+std::string Contact::getDarkestSecret() const {
 	return this->darkestSecret;
 }

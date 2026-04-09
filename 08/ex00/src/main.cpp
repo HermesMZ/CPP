@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:46:34 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 00:46:35 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include <list>
 #include <deque>
 
-int main()
-{
+int main() {
 	std::cout << "=== Testing with std::vector ===" << std::endl;
 	{
 		std::vector<int> vec;

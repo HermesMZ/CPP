@@ -16,8 +16,7 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
-class Account
-{
+class Account {
 	private:
 
 		static int	_nbAccounts;

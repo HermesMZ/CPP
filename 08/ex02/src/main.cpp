@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:10:20 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 17:10:21 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <iostream>
 #include <list>
 
-int main()
-{
+int main() {
 	std::cout << "=== Test with MutantStack ===" << std::endl;
 	{
 		MutantStack<int> mstack;

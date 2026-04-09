@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:43:09 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 00:43:10 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 #include <stdexcept>
 
 template <typename T>
-typename T::iterator easyfind(T& container, int value)
-{
+typename T::iterator easyfind(T& container, int value) {
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
 	if (it == container.end())
 		throw std::runtime_error("Value not found in container");

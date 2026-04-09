@@ -6,26 +6,23 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:50:00 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/12/04 13:34:26 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : _name("default")
-{
+Character::Character() : _name("default") {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 
-Character::Character(std::string const & name) : _name(name)
-{
+Character::Character(std::string const & name) : _name(name) {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 
-Character::Character(const Character& other) : ICharacter(other), _name(other._name)
-{
+Character::Character(const Character& other) : ICharacter(other), _name(other._name) {
 	for (int i = 0; i < 4; i++)
 	{
 		if (other._inventory[i])
@@ -35,8 +32,7 @@ Character::Character(const Character& other) : ICharacter(other), _name(other._n
 	}
 }
 
-Character& Character::operator=(const Character& other)
-{
+Character& Character::operator=(const Character& other) {
 	if (this != &other)
 	{
 		_name = other._name;
@@ -54,8 +50,7 @@ Character& Character::operator=(const Character& other)
 	return *this;
 }
 
-Character::~Character()
-{
+Character::~Character() {
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i])
@@ -63,13 +58,11 @@ Character::~Character()
 	}
 }
 
-std::string const & Character::getName() const
-{
+std::string const & Character::getName() const {
 	return _name;
 }
 
-void Character::equip(AMateria* m)
-{
+void Character::equip(AMateria* m) {
 	if (!m)
 		return;
 	
@@ -83,8 +76,7 @@ void Character::equip(AMateria* m)
 	}
 }
 
-void Character::unequip(int idx)
-{
+void Character::unequip(int idx) {
 	if (idx < 0 || idx >= 4)
 		return;
 	
@@ -92,8 +84,7 @@ void Character::unequip(int idx)
 		_inventory[idx] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target)
-{
+void Character::use(int idx, ICharacter& target) {
 	if (idx < 0 || idx >= 4)
 		return;
 	

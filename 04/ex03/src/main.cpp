@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:17:08 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/12/10 12:57:05 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 #include "MateriaSource.hpp"
 #include <iostream>
 
-int main()
-{
+int main() {
 	std::cout << "=== TEST 1: Creation de MateriaSource et apprentissage ===" << std::endl;
 	MateriaSource* src = new MateriaSource();
 	

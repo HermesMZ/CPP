@@ -3,78 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:32:24 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/18 11:58:29 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-{
+Fixed::Fixed() {
 	std::cout << "Default constructor called" << std::endl;
 	this->_integer = 0;
 }
 
-Fixed::~Fixed()
-{
+Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &other) : _integer(other._integer)
-{
+Fixed::Fixed(const Fixed &other) : _integer(other._integer) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int value)
-{
+Fixed::Fixed(const int value) {
     std::cout << "Int constructor called" << std::endl;
     _integer = value << _fractionalBits;
 }
 
-Fixed::Fixed(const float value)
-{
+Fixed::Fixed(const float value) {
     std::cout << "Float constructor called" << std::endl;
     _integer = roundf(value * (1 << _fractionalBits));
 }
 
-Fixed & Fixed::operator=(const Fixed &other)
-{
+Fixed & Fixed::operator=(const Fixed &other) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->_integer = other._integer;
 	return *this;
 }
 
-int Fixed::getRawBits( void ) const
-{
+int Fixed::getRawBits( void ) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_integer;
 }
 
-void Fixed::setRawBits( int const raw )
-{
+void Fixed::setRawBits( int const raw ) {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_integer = raw;
 }
 
-float Fixed::toFloat( void ) const
-{
+float Fixed::toFloat( void ) const {
 	return static_cast<float>(this->_integer) / (1 << _fractionalBits);
 }
 
-int Fixed::toInt( void ) const
-{
+int Fixed::toInt( void ) const {
 	return this->_integer >> _fractionalBits;
 }
 
 // Une surcharge de l’opérateur d’insertion («) qui insère une représentation en vir-
 // gule flottante du nombre à virgule fixe dans le flux de sortie (objet output stream)
 // passé en paramètre.
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
-{
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
     out << fixed.toFloat();
     return out;
 }

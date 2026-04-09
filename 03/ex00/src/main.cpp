@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:51:15 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/11/20 14:54:57 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-void printSeparator(const std::string& title)
-{
+void printSeparator(const std::string& title) {
 	std::cout << "\n========================================" << std::endl;
 	std::cout << "  " << title << std::endl;
 	std::cout << "========================================\n" << std::endl;
 }
 
-void testConstructors()
-{
+void testConstructors() {
 	printSeparator("TEST 1: CONSTRUCTEURS");
 	
 	std::cout << "--- Constructeur par défaut ---" << std::endl;
@@ -39,8 +37,7 @@ void testConstructors()
 	std::cout << "\n--- Destructeurs (à la fin du scope) ---" << std::endl;
 }
 
-void testBasicAttack()
-{
+void testBasicAttack() {
 	printSeparator("TEST 2: ATTAQUE DE BASE");
 	
 	ClapTrap hero("Hero");
@@ -49,8 +46,7 @@ void testBasicAttack()
 	hero.attack("Goblin");
 }
 
-void testEnergyDepletion()
-{
+void testEnergyDepletion() {
 	printSeparator("TEST 3: ÉPUISEMENT DE L'ÉNERGIE");
 	
 	ClapTrap fighter("Fighter");
@@ -62,8 +58,7 @@ void testEnergyDepletion()
 	}
 }
 
-void testRepair()
-{
+void testRepair() {
 	printSeparator("TEST 4: RÉPARATION");
 	
 	ClapTrap mechanic("Mechanic");
@@ -74,8 +69,7 @@ void testRepair()
 	mechanic.beRepaired(2);
 }
 
-void testDamage()
-{
+void testDamage() {
 	printSeparator("TEST 5: DÉGÂTS");
 	
 	ClapTrap victim("Victim");
@@ -89,8 +83,7 @@ void testDamage()
 	victim.attack("Enemy");
 }
 
-void testDeath()
-{
+void testDeath() {
 	printSeparator("TEST 6: MORT DU CLAPTRAP");
 	
 	ClapTrap doomed("Doomed");
@@ -106,8 +99,7 @@ void testDeath()
 	doomed.takeDamage(5);
 }
 
-void testEnergyDepletionWithRepair()
-{
+void testEnergyDepletionWithRepair() {
 	printSeparator("TEST 7: ÉPUISEMENT D'ÉNERGIE AVEC RÉPARATIONS");
 	
 	ClapTrap worker("Worker");
@@ -129,8 +121,7 @@ void testEnergyDepletionWithRepair()
 	worker.beRepaired(5);
 }
 
-void testDamageAndRepair()
-{
+void testDamageAndRepair() {
 	printSeparator("TEST 8: DÉGÂTS ET RÉPARATIONS");
 	
 	ClapTrap survivor("Survivor");
@@ -146,8 +137,7 @@ void testDamageAndRepair()
 	survivor.beRepaired(1);
 }
 
-void testExtremeDamage()
-{
+void testExtremeDamage() {
 	printSeparator("TEST 9: DÉGÂTS EXTRÊMES");
 	
 	ClapTrap tank("Tank");
@@ -160,8 +150,7 @@ void testExtremeDamage()
 	tank.beRepaired(100);
 }
 
-void testSequentialDeath()
-{
+void testSequentialDeath() {
 	printSeparator("TEST 10: MORT PROGRESSIVE");
 	
 	ClapTrap gradual("Gradual");
@@ -179,8 +168,7 @@ void testSequentialDeath()
 	gradual.attack("Enemy4");
 }
 
-void testMixedScenario()
-{
+void testMixedScenario() {
 	printSeparator("TEST 11: SCÉNARIO MIXTE COMPLEXE");
 	
 	ClapTrap complex("Complex");
@@ -202,8 +190,7 @@ void testMixedScenario()
 	complex.attack("LastEnemy");
 }
 
-void testCopyBehavior()
-{
+void testCopyBehavior() {
 	printSeparator("TEST 12: COMPORTEMENT DES COPIES");
 	
 	ClapTrap original("Original");
@@ -223,8 +210,7 @@ void testCopyBehavior()
 	original.attack("Target3");
 }
 
-int main()
-{
+int main() {
 	std::cout << "\n╔════════════════════════════════════════╗" << std::endl;
 	std::cout << "║  BATTERIE DE TESTS CLAPTRAP COMPLÈTE  ║" << std::endl;
 	std::cout << "╚════════════════════════════════════════╝\n" << std::endl;

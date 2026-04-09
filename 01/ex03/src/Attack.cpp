@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Attack.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:02:20 by mzimeris          #+#    #+#             */
-/*   Updated: 2025/10/17 16:13:47 by mzimeris         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-void HumanA::attack() const
-{
+void HumanA::attack() const {
 	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
 }
 
-void HumanB::attack() const
-{
+void HumanB::attack() const {
 	if (this->weapon)
 		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 	else
