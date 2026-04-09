@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:30:00 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 01:21:13 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:12:45 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "C.HPP"
 #include <iostream>
 
-void identify(Base* p)
-{
+void identify(Base* p) {
 	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B*>(p))
@@ -28,8 +27,7 @@ void identify(Base* p)
 		std::cout << "Unknown type" << std::endl;
 }
 
-void identify(Base& p)
-{
+void identify(Base& p) {
 	try
 	{
 		(void)dynamic_cast<A&>(p);

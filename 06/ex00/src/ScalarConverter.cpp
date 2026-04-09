@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 14:39:05 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/11 15:34:35 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 14:55:22 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 ScalarConverter::ScalarConverter() {}
 
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
-{
+ScalarConverter::ScalarConverter(const ScalarConverter &other) {
 	(void)other;
 }
 
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
-{
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other) {
 	(void)other;
 	return *this;
 }
 
 ScalarConverter::~ScalarConverter() {}
 
-static void printChar(double value)
-{
+static void printChar(double value) {
 	if (std::isnan(value) || std::isinf(value) || value < 0 || value > 127)
 		std::cout << "char: impossible" << std::endl;
 	else if (!std::isprint(static_cast<int>(value)))
@@ -37,8 +34,7 @@ static void printChar(double value)
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 }
 
-static void printInt(double value)
-{
+static void printInt(double value) {
 	if (std::isnan(value) || std::isinf(value) || 
 		value > std::numeric_limits<int>::max() || 
 		value < std::numeric_limits<int>::min())
@@ -47,8 +43,7 @@ static void printInt(double value)
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
 }
 
-static void printFloat(double value)
-{
+static void printFloat(double value) {
 	if (!std::isnan(value) && !std::isinf(value) && 
 		(value > std::numeric_limits<float>::max() || 
 		 value < -std::numeric_limits<float>::max()))
@@ -58,27 +53,23 @@ static void printFloat(double value)
 			<< static_cast<float>(value) << "f" << std::endl;
 }
 
-static void printDouble(double value)
-{
+static void printDouble(double value) {
 	std::cout << "double: " << std::fixed << std::setprecision(1) 
 		<< value << std::endl;
 }
 
-static void printAll(double value)
-{
+static void printAll(double value) {
 	printChar(value);
 	printInt(value);
 	printFloat(value);
 	printDouble(value);
 }
 
-bool ScalarConverter::isChar(const std::string &literal)
-{
+bool ScalarConverter::isChar(const std::string &literal) {
 	return (literal.length() == 1 && !std::isdigit(literal[0]) && std::isprint(literal[0]));
 }
 
-bool ScalarConverter::isInt(const std::string &literal)
-{
+bool ScalarConverter::isInt(const std::string &literal) {
 	if (literal.empty())
 		return false;
 	
@@ -98,8 +89,7 @@ bool ScalarConverter::isInt(const std::string &literal)
 	return true;
 }
 
-bool ScalarConverter::isFloat(const std::string &literal)
-{
+bool ScalarConverter::isFloat(const std::string &literal) {
 	if (literal == "nanf" || literal == "+inff" || literal == "-inff")
 		return true;
 	
@@ -112,8 +102,7 @@ bool ScalarConverter::isFloat(const std::string &literal)
 	return (*end == '\0' && !num.empty());
 }
 
-bool ScalarConverter::isDouble(const std::string &literal)
-{
+bool ScalarConverter::isDouble(const std::string &literal) {
 	if (literal == "nan" || literal == "+inf" || literal == "-inf")
 		return true;
 	
@@ -125,8 +114,7 @@ bool ScalarConverter::isDouble(const std::string &literal)
 	return (*end == '\0');
 }
 
-static double parseValue(const std::string &literal)
-{
+static double parseValue(const std::string &literal) {
 	if (literal == "nan" || literal == "nanf")
 		return std::numeric_limits<double>::quiet_NaN();
 	if (literal == "+inf" || literal == "+inff")
@@ -136,8 +124,7 @@ static double parseValue(const std::string &literal)
 	return std::atof(literal.c_str());
 }
 
-void ScalarConverter::convert(const std::string &literal)
-{
+void ScalarConverter::convert(const std::string &literal) {
 	double value;
 
 	if (isChar(literal))

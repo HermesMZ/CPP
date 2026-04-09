@@ -6,14 +6,13 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:36:24 by mzimeris          #+#    #+#             */
-/*   Updated: 2026/01/13 17:52:55 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 14:54:40 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 	if (argc == 1) {
 		std::cout << "Test1 : 0" << std::endl;
 		ScalarConverter::convert("0");

@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:30:00 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/13 23:31:31 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:12:49 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include <cstdlib>
 #include <ctime>
 
-Base* generate(void)
-{
+Base* generate(void) {
 	static bool seeded = false;
 	if (!seeded)
 	{

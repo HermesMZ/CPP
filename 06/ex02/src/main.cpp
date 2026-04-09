@@ -6,7 +6,7 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:30:00 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/14 01:21:13 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/09 15:15:00 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ Base* generate(void);
 void identify(Base* p);
 void identify(Base& p);
 
-int main()
-{
+int main() {
 	std::cout << "=== Test 1: Generate and identify random instances ===" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
