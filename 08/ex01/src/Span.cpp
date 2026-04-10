@@ -6,32 +6,27 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:10:05 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/10 18:02:07 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span() : _maxSize(0) {
-}
+Span::Span() : _maxSize(0) {}
 
-Span::Span(unsigned int N) : _maxSize(N) {
-}
+Span::Span(unsigned int N) : _maxSize(N) {}
 
-Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers) {
-}
+Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers) {}
 
 Span& Span::operator=(const Span& other) {
-	if (this != &other)
-	{
+	if (this != &other)	{
 		_maxSize = other._maxSize;
 		_numbers = other._numbers;
 	}
 	return *this;
 }
 
-Span::~Span() {
-}
+Span::~Span() {}
 
 void Span::addNumber(int number) {
 	if (_numbers.size() >= _maxSize)
@@ -47,8 +42,7 @@ int Span::shortestSpan() const {
 	std::sort(sorted.begin(), sorted.end());
 
 	int minSpan = std::numeric_limits<int>::max();
-	for (size_t i = 1; i < sorted.size(); i++)
-	{
+	for (size_t i = 1; i < sorted.size(); i++) {
 		int span = sorted[i] - sorted[i - 1];
 		if (span < minSpan)
 			minSpan = span;
@@ -65,6 +59,10 @@ int Span::longestSpan() const {
 	int max = *std::max_element(_numbers.begin(), _numbers.end());
 
 	return max - min;
+}
+
+const std::vector<int>& Span::getNumbers() const {
+	return _numbers;
 }
 
 const char* Span::SpanFullException::what() const throw() {
