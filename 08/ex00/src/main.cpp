@@ -6,97 +6,38 @@
 /*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:46:34 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/10 17:01:24 by zoum             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+#include "test.hpp"
 #include <iostream>
 #include <vector>
 #include <list>
 #include <deque>
 
 int main() {
-	std::cout << "=== Testing with std::vector ===" << std::endl;
-	{
-		std::vector<int> vec;
-		vec.push_back(1);
-		vec.push_back(2);
-		vec.push_back(3);
-		vec.push_back(4);
-		vec.push_back(5);
+	std::cout << "\n=== Testing const and non-const containers ===" << std::endl;
+	const int vecValues[] = {1, 2, 3, 4, 5};
+	runEasyfindTests< std::vector<int> >("std::vector", vecValues,
+		sizeof(vecValues) / sizeof(vecValues[0]), 3, 42);
 
-		try {
-			std::vector<int>::iterator it = easyfind(vec, 3);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
+	const int listValues[] = {10, 20, 30, 40, 50};
+	runEasyfindTests< std::list<int> >("std::list", listValues,
+		sizeof(listValues) / sizeof(listValues[0]), 30, 100);
 
-		try {
-			std::vector<int>::iterator it = easyfind(vec, 42);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-	}
+	const int dequeValues[] = {100, 200, 300};
+	runEasyfindTests< std::deque<int> >("std::deque", dequeValues,
+		sizeof(dequeValues) / sizeof(dequeValues[0]), 200, 1);
 
-	std::cout << "\n=== Testing with std::list ===" << std::endl;
-	{
-		std::list<int> lst;
-		lst.push_back(10);
-		lst.push_back(20);
-		lst.push_back(30);
-		lst.push_back(40);
-		lst.push_back(50);
-
-		try {
-			std::list<int>::iterator it = easyfind(lst, 30);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-
-		try {
-			std::list<int>::iterator it = easyfind(lst, 100);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-	}
-
-	std::cout << "\n=== Testing with std::deque ===" << std::endl;
-	{
-		std::deque<int> deq;
-		deq.push_back(100);
-		deq.push_back(200);
-		deq.push_back(300);
-
-		try {
-			std::deque<int>::iterator it = easyfind(deq, 200);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-
-		try {
-			std::deque<int>::iterator it = easyfind(deq, 1);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-	}
+	
 
 	std::cout << "\n=== Testing with empty container ===" << std::endl;
 	{
 		std::vector<int> empty;
-
-		try {
-			std::vector<int>::iterator it = easyfind(empty, 1);
-			std::cout << "Found: " << *it << std::endl;
-		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
+		printContainer(empty);
+		testEasyfind(empty, 1);
 	}
 
 	return 0;
