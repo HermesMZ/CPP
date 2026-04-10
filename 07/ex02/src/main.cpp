@@ -3,8 +3,9 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <climits>
 
-#define MAX_VAL 750
+#define MAX_VAL 100000
 
 int main(int, char**) {
 	std::cout << "=== Test 1: Empty array ===" << std::endl;
@@ -119,45 +120,27 @@ int main(int, char**) {
 	std::cout << "\n=== Test 7: Large array test ===" << std::endl;
 	{
 		Array<int> numbers(MAX_VAL);
-		int* mirror = new int[MAX_VAL];
 		srand(time(NULL));
 		
 		for (int i = 0; i < MAX_VAL; i++) {
-			const int value = rand();
-			numbers[i] = value;
-			mirror[i] = value;
+			numbers[i] = rand();
 		}
 		
-		{
-			Array<int> tmp = numbers;
-			Array<int> test(tmp);
-		}
-
+		Array<int> test(numbers);
+		
 		for (int i = 0; i < MAX_VAL; i++) {
-			if (mirror[i] != numbers[i]) {
-				std::cerr << "didn't save the same value!!" << std::endl;
-				delete[] mirror;
+			if (numbers[i] != test[i]) {
+				std::cerr << "copy constructor failed" << std::endl;
 				return 1;
 			}
 		}
-		
-		try {
-			numbers[-2] = 0;
-		}
-		catch(const std::exception& e) {
-			std::cout << "Exception caught for negative index" << std::endl;
-		}
-		try {
-			numbers[MAX_VAL] = 0;
-		}
-		catch(const std::exception& e) {
-			std::cout << "Exception caught for index MAX_VAL" << std::endl;
+
+		numbers[0] = numbers[0] + 1;
+		if (numbers[0] == test[0]) {
+			std::cerr << "copy is not independent" << std::endl;
+			return 1;
 		}
 
-		for (int i = 0; i < MAX_VAL; i++) {
-			numbers[i] = rand();
-		}
-		delete[] mirror;
 		std::cout << "Large array test passed!" << std::endl;
 	}
 
