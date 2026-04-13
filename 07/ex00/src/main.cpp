@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:55:46 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:29:05 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/13 16:12:52 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include "whatever.hpp"
 
 int main(void) {
-	int a = 2;
-	int b = 2;
+	double a = 2;
+	double b = 425.654;
+	
 
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	::swap(a, b);

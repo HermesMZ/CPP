@@ -3,31 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:03:50 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/13 16:18:14 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+#include "test.hpp"
 #include <iostream>
 #include <string>
-
-template <typename T>
-void printElement(const T& element) {
-	std::cout << element << " ";
-}
-
-template <typename T>
-void incrementElement(T& element) {
-	element++;
-}
-
-template <typename T>
-void doubleElement(T& element) {
-	element *= 2;
-}
 
 void printString(const std::string& str) {
 	std::cout << str << " ";

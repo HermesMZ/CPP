@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 00:15:25 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/10 15:37:19 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/13 17:11:02 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ public:
 
 	T& operator[](int index) {
 		if (index < 0 || static_cast<unsigned int>(index) >= _size)
-			throw std::exception();
+			throw std::out_of_range("index out of range");
 		return elements[index];
 	}
 
 	const T& operator[](int index) const {
 		if (index < 0 || static_cast<unsigned int>(index) >= _size)
-			throw std::exception();
+			throw std::out_of_range("index out of range");
 		return elements[index];
 	}
 
