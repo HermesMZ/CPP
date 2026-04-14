@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:17:21 by zoum              #+#    #+#             */
-/*   Updated: 2026/01/13 23:18:03 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/14 11:31:30 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef DATA_HPP
+#define DATA_HPP
 
 #include <string>
 
@@ -19,3 +20,5 @@ struct Data {
 	std::string name;
 	double value;
 };
+
+#endif

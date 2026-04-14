@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   A.HPP                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:27:07 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/14 11:32:43 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef A_HPP
+#define A_HPP
 
 #include "Base.hpp"
 
 class A : public Base {
 };
+
+#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:10:20 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/14 11:23:12 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int main() {
 		
 		mlist.push_back(5);
 		mlist.push_back(17);
+		mlist.push_back(3);
 		
 		std::cout << "Back: " << mlist.back() << std::endl;
 		

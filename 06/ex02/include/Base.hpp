@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zoum <zoum@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mzimeris <mzimeris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 23:25:50 by zoum              #+#    #+#             */
-/*   Updated: 2026/04/09 15:25:45 by zoum             ###   ########.fr       */
+/*   Updated: 2026/04/14 11:33:32 by mzimeris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BASE_HPP
+#define BASE_HPP
 
 class Base {
 public:
 	virtual ~Base();
 };
+
+#endif
